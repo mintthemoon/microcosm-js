@@ -1,5 +1,4 @@
 /** @type {import('tailwindcss').Config} */
-console.log("TAILWIND ACTIVATED")
 module.exports = {
   content: [
     "./app/**/*.{js,ts,jsx,tsx,mdx}",

@@ -4,9 +4,10 @@
   "private": true,
   "exports": {
     "./button": "./src/components/button.tsx",
-    "./wallet": "./src/components/wallet.tsx",
+    "./wallet": "./src/components/wallet/index.tsx",
     "./tailwind-plugin": "./src/tailwind/plugin.js",
-    "./style/main.css": "./src/styles/main.css"
+    "./style/main.css": "./src/styles/main.css",
+    "./utility/tokens": "./src/utility/tokens.tsx"
   },
   "scripts": {
     "lint": "eslint . --max-warnings 0",
@@ -25,11 +26,23 @@
     "typescript": "^5.3.3"
   },
   "dependencies": {
+    "@chain-registry/client": "^1.48.16",
+    "@chain-registry/types": "^0.45.16",
+    "@cosmjs/amino": "^0.32.4",
+    "@cosmjs/proto-signing": "^0.32.4",
+    "@cosmjs/stargate": "^0.32.4",
+    "@radix-ui/react-dialog": "^1.1.1",
     "@radix-ui/react-dropdown-menu": "^2.1.1",
+    "@radix-ui/react-scroll-area": "^1.1.0",
     "@radix-ui/react-slot": "^1.1.0",
+    "@radix-ui/react-tooltip": "^1.1.2",
+    "@walletconnect/sign-client": "^2.13.3",
+    "@walletconnect/types": "^2.13.3",
+    "chain-registry": "^1.63.19",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "lucide-react": "^0.400.0",
+    "qrcode.react": "^3.1.0",
     "react": "^18.2.0",
     "tailwind-merge": "^2.3.0",
     "tailwindcss-animate": "^1.0.7"

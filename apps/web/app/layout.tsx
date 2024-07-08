@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "@repo/react/style/main.css";
+import { WalletProvider } from "@repo/react/wallet";
 // import "./globals.css";
 
 const geistSans = localFont({
@@ -25,7 +26,18 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        {children}
+        <WalletProvider
+          config={{
+            chainId: "kaiyo-1",
+            rpcUrl: "https://rpc-kujira.mintthemoon.xyz",
+            featuredTokens: [
+              "ukuji",
+              "factory/kujira1qk00h5atutpsv900x202pxx42npjr9thg58dnqpa72f2p7m2luase444a7/uusk",
+              "factory/kujira12cjjeytrqcj25uv349thltcygnp9k0kukpct0e/uwink",
+            ],
+          }}>
+            {children}
+          </WalletProvider>
       </body>
     </html>
   );

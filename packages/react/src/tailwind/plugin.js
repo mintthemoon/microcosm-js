@@ -55,8 +55,7 @@ module.exports = plugin(
     })
   },
   {
-    content: [path.join(path.dirname(""))
-    ],
+    content: [path.join(path.dirname("@repo/react"), "**/*.{js,jsx,ts,tsx}")],
     theme: {
       extend: {
         colors: {

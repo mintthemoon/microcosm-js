@@ -9,6 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@cosmjs/amino": "^0.32.4",
+    "@cosmjs/proto-signing": "^0.32.4",
+    "@cosmjs/stargate": "^0.32.4",
     "@repo/react": "workspace:*",
     "next": "15.0.0-rc.0",
     "react": "19.0.0-rc-f994737d14-20240522",
