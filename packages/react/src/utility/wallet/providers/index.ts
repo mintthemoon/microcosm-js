@@ -1,7 +1,7 @@
 import { sonarProvider } from './sonar';
 import { keplrProvider } from './keplr';
 
-const PROVIDERS = [
+const providers = [
     sonarProvider,
     keplrProvider,
 ];
@@ -9,5 +9,5 @@ const PROVIDERS = [
 export {
     sonarProvider,
     keplrProvider,
-    PROVIDERS,
+    providers,
 }

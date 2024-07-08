@@ -1,6 +1,6 @@
 import { WalletConnector, WalletConfig, WalletProvider } from '../../../types/wallet';
 import { OfflineSigner } from "@cosmjs/proto-signing";
-import { KeplrIcon } from '../../../components/wallet/icons';
+import { KeplrIcon } from '../../../components/icons';
 
 declare global {
   interface Window {

@@ -1,0 +1,22 @@
+{
+  "entryPoints": [
+    "src/index.ts",
+    "src/components/index.ts",
+    "src/contexts/index.ts",
+    "src/hooks/index.ts",
+    "src/utility/index.ts",
+    "src/types/index.ts"
+  ],
+  "out": "../../apps/docs/docs/api",
+  "exclude": ["**/node_modules/**"],
+  "excludePrivate": true,
+  "excludeProtected": true,
+  "excludeExternals": true,
+  "theme": "default",
+  "plugin": ["typedoc-plugin-markdown"],
+  "hideBreadcrumbs": true,
+  "hidePageHeader": true,
+  "expandObjects": true,
+  "outputFileStrategy": "modules",
+  "mergeReadme": true
+}

@@ -4,7 +4,7 @@ import { OfflineSigner, OfflineDirectSigner, AccountData } from "@cosmjs/proto-s
 import { OfflineAminoSigner } from "@cosmjs/amino";
 import { WalletConfig, WalletConnector, WalletProvider } from "../../../types/wallet";
 import { SonarQRModal } from "../../../components/sonar-qr-modal";
-import { SonarIcon } from "../../../components/wallet/icons";
+import { SonarIcon } from "../../../components/icons";
 
 let chain = "kaiyo-1";
 

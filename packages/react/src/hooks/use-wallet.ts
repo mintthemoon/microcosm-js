@@ -2,11 +2,11 @@
 'use client'
 
 import { useCallback, useEffect } from 'react';
-import { useWalletState, useWalletDispatch } from '../contexts/wallet-context';
+import { useWalletState, useWalletDispatch } from '../contexts/wallet';
 import { WalletProvider } from '../types/wallet';
 import { SigningStargateClient } from '@cosmjs/stargate';
 import { saveWalletConnection, getWalletConnection, clearWalletConnection } from '../utility/storage';
-import { PROVIDERS } from '../utility/wallet/providers';
+import { providers } from '../utility/wallet/providers';
 
 export const useWallet = () => {
   const state = useWalletState();
@@ -77,7 +77,7 @@ export const useWallet = () => {
     const initializeWallet = async () => {
       const storedConnection = getWalletConnection();
       if (storedConnection) {
-        const provider = PROVIDERS.find(p => p.name === storedConnection.providerName);
+        const provider = providers.find(p => p.name === storedConnection.providerName);
         if (provider) {
           try {
             await connect(provider);
