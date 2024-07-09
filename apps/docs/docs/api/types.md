@@ -16,7 +16,7 @@
 
 ###### Defined in
 
-[packages/react/src/types/wallet.ts:12](https://github.com/mintthemoon/microcosm-js/blob/fb95c90ab10e9a453e664325843ddb64e7e576c9/packages/react/src/types/wallet.ts#L12)
+[packages/react/src/types/wallet.ts:12](https://github.com/mintthemoon/microcosm-js/blob/c346e4f2580bc6a563c9d5700fb5933b82afca4d/packages/react/src/types/wallet.ts#L12)
 
 ##### featuredTokens?
 
@@ -24,7 +24,7 @@
 
 ###### Defined in
 
-[packages/react/src/types/wallet.ts:14](https://github.com/mintthemoon/microcosm-js/blob/fb95c90ab10e9a453e664325843ddb64e7e576c9/packages/react/src/types/wallet.ts#L14)
+[packages/react/src/types/wallet.ts:14](https://github.com/mintthemoon/microcosm-js/blob/c346e4f2580bc6a563c9d5700fb5933b82afca4d/packages/react/src/types/wallet.ts#L14)
 
 ##### maxTokens?
 
@@ -32,7 +32,7 @@
 
 ###### Defined in
 
-[packages/react/src/types/wallet.ts:15](https://github.com/mintthemoon/microcosm-js/blob/fb95c90ab10e9a453e664325843ddb64e7e576c9/packages/react/src/types/wallet.ts#L15)
+[packages/react/src/types/wallet.ts:15](https://github.com/mintthemoon/microcosm-js/blob/c346e4f2580bc6a563c9d5700fb5933b82afca4d/packages/react/src/types/wallet.ts#L15)
 
 ##### rpcUrl
 
@@ -40,7 +40,7 @@
 
 ###### Defined in
 
-[packages/react/src/types/wallet.ts:13](https://github.com/mintthemoon/microcosm-js/blob/fb95c90ab10e9a453e664325843ddb64e7e576c9/packages/react/src/types/wallet.ts#L13)
+[packages/react/src/types/wallet.ts:13](https://github.com/mintthemoon/microcosm-js/blob/c346e4f2580bc6a563c9d5700fb5933b82afca4d/packages/react/src/types/wallet.ts#L13)
 
 ***
 
@@ -70,7 +70,7 @@
 
 ###### Defined in
 
-[packages/react/src/types/wallet.ts:40](https://github.com/mintthemoon/microcosm-js/blob/fb95c90ab10e9a453e664325843ddb64e7e576c9/packages/react/src/types/wallet.ts#L40)
+[packages/react/src/types/wallet.ts:40](https://github.com/mintthemoon/microcosm-js/blob/c346e4f2580bc6a563c9d5700fb5933b82afca4d/packages/react/src/types/wallet.ts#L40)
 
 ##### disconnect()
 
@@ -82,7 +82,7 @@
 
 ###### Defined in
 
-[packages/react/src/types/wallet.ts:41](https://github.com/mintthemoon/microcosm-js/blob/fb95c90ab10e9a453e664325843ddb64e7e576c9/packages/react/src/types/wallet.ts#L41)
+[packages/react/src/types/wallet.ts:41](https://github.com/mintthemoon/microcosm-js/blob/c346e4f2580bc6a563c9d5700fb5933b82afca4d/packages/react/src/types/wallet.ts#L41)
 
 ##### subscribe()
 
@@ -104,7 +104,7 @@
 
 ###### Defined in
 
-[packages/react/src/types/wallet.ts:42](https://github.com/mintthemoon/microcosm-js/blob/fb95c90ab10e9a453e664325843ddb64e7e576c9/packages/react/src/types/wallet.ts#L42)
+[packages/react/src/types/wallet.ts:42](https://github.com/mintthemoon/microcosm-js/blob/c346e4f2580bc6a563c9d5700fb5933b82afca4d/packages/react/src/types/wallet.ts#L42)
 
 ***
 
@@ -118,7 +118,7 @@
 
 ###### Defined in
 
-[packages/react/src/types/wallet.ts:48](https://github.com/mintthemoon/microcosm-js/blob/fb95c90ab10e9a453e664325843ddb64e7e576c9/packages/react/src/types/wallet.ts#L48)
+[packages/react/src/types/wallet.ts:48](https://github.com/mintthemoon/microcosm-js/blob/c346e4f2580bc6a563c9d5700fb5933b82afca4d/packages/react/src/types/wallet.ts#L48)
 
 ##### icon
 
@@ -126,7 +126,7 @@
 
 ###### Defined in
 
-[packages/react/src/types/wallet.ts:8](https://github.com/mintthemoon/microcosm-js/blob/fb95c90ab10e9a453e664325843ddb64e7e576c9/packages/react/src/types/wallet.ts#L8)
+[packages/react/src/types/wallet.ts:8](https://github.com/mintthemoon/microcosm-js/blob/c346e4f2580bc6a563c9d5700fb5933b82afca4d/packages/react/src/types/wallet.ts#L8)
 
 ##### name
 
@@ -134,7 +134,7 @@
 
 ###### Defined in
 
-[packages/react/src/types/wallet.ts:7](https://github.com/mintthemoon/microcosm-js/blob/fb95c90ab10e9a453e664325843ddb64e7e576c9/packages/react/src/types/wallet.ts#L7)
+[packages/react/src/types/wallet.ts:7](https://github.com/mintthemoon/microcosm-js/blob/c346e4f2580bc6a563c9d5700fb5933b82afca4d/packages/react/src/types/wallet.ts#L7)
 
 ***
 
@@ -148,7 +148,7 @@
 
 ###### Defined in
 
-[packages/react/src/types/wallet.ts:28](https://github.com/mintthemoon/microcosm-js/blob/fb95c90ab10e9a453e664325843ddb64e7e576c9/packages/react/src/types/wallet.ts#L28)
+[packages/react/src/types/wallet.ts:28](https://github.com/mintthemoon/microcosm-js/blob/c346e4f2580bc6a563c9d5700fb5933b82afca4d/packages/react/src/types/wallet.ts#L28)
 
 ##### address
 
@@ -156,7 +156,7 @@
 
 ###### Defined in
 
-[packages/react/src/types/wallet.ts:21](https://github.com/mintthemoon/microcosm-js/blob/fb95c90ab10e9a453e664325843ddb64e7e576c9/packages/react/src/types/wallet.ts#L21)
+[packages/react/src/types/wallet.ts:21](https://github.com/mintthemoon/microcosm-js/blob/c346e4f2580bc6a563c9d5700fb5933b82afca4d/packages/react/src/types/wallet.ts#L21)
 
 ##### client
 
@@ -164,7 +164,7 @@
 
 ###### Defined in
 
-[packages/react/src/types/wallet.ts:23](https://github.com/mintthemoon/microcosm-js/blob/fb95c90ab10e9a453e664325843ddb64e7e576c9/packages/react/src/types/wallet.ts#L23)
+[packages/react/src/types/wallet.ts:23](https://github.com/mintthemoon/microcosm-js/blob/c346e4f2580bc6a563c9d5700fb5933b82afca4d/packages/react/src/types/wallet.ts#L23)
 
 ##### config
 
@@ -172,7 +172,7 @@
 
 ###### Defined in
 
-[packages/react/src/types/wallet.ts:27](https://github.com/mintthemoon/microcosm-js/blob/fb95c90ab10e9a453e664325843ddb64e7e576c9/packages/react/src/types/wallet.ts#L27)
+[packages/react/src/types/wallet.ts:27](https://github.com/mintthemoon/microcosm-js/blob/c346e4f2580bc6a563c9d5700fb5933b82afca4d/packages/react/src/types/wallet.ts#L27)
 
 ##### error
 
@@ -180,7 +180,7 @@
 
 ###### Defined in
 
-[packages/react/src/types/wallet.ts:26](https://github.com/mintthemoon/microcosm-js/blob/fb95c90ab10e9a453e664325843ddb64e7e576c9/packages/react/src/types/wallet.ts#L26)
+[packages/react/src/types/wallet.ts:26](https://github.com/mintthemoon/microcosm-js/blob/c346e4f2580bc6a563c9d5700fb5933b82afca4d/packages/react/src/types/wallet.ts#L26)
 
 ##### isConnected
 
@@ -188,7 +188,7 @@
 
 ###### Defined in
 
-[packages/react/src/types/wallet.ts:19](https://github.com/mintthemoon/microcosm-js/blob/fb95c90ab10e9a453e664325843ddb64e7e576c9/packages/react/src/types/wallet.ts#L19)
+[packages/react/src/types/wallet.ts:19](https://github.com/mintthemoon/microcosm-js/blob/c346e4f2580bc6a563c9d5700fb5933b82afca4d/packages/react/src/types/wallet.ts#L19)
 
 ##### isLoading
 
@@ -196,7 +196,7 @@
 
 ###### Defined in
 
-[packages/react/src/types/wallet.ts:20](https://github.com/mintthemoon/microcosm-js/blob/fb95c90ab10e9a453e664325843ddb64e7e576c9/packages/react/src/types/wallet.ts#L20)
+[packages/react/src/types/wallet.ts:20](https://github.com/mintthemoon/microcosm-js/blob/c346e4f2580bc6a563c9d5700fb5933b82afca4d/packages/react/src/types/wallet.ts#L20)
 
 ##### provider
 
@@ -204,7 +204,7 @@
 
 ###### Defined in
 
-[packages/react/src/types/wallet.ts:22](https://github.com/mintthemoon/microcosm-js/blob/fb95c90ab10e9a453e664325843ddb64e7e576c9/packages/react/src/types/wallet.ts#L22)
+[packages/react/src/types/wallet.ts:22](https://github.com/mintthemoon/microcosm-js/blob/c346e4f2580bc6a563c9d5700fb5933b82afca4d/packages/react/src/types/wallet.ts#L22)
 
 ##### signer
 
@@ -212,7 +212,7 @@
 
 ###### Defined in
 
-[packages/react/src/types/wallet.ts:24](https://github.com/mintthemoon/microcosm-js/blob/fb95c90ab10e9a453e664325843ddb64e7e576c9/packages/react/src/types/wallet.ts#L24)
+[packages/react/src/types/wallet.ts:24](https://github.com/mintthemoon/microcosm-js/blob/c346e4f2580bc6a563c9d5700fb5933b82afca4d/packages/react/src/types/wallet.ts#L24)
 
 ##### tokens
 
@@ -220,7 +220,7 @@
 
 ###### Defined in
 
-[packages/react/src/types/wallet.ts:25](https://github.com/mintthemoon/microcosm-js/blob/fb95c90ab10e9a453e664325843ddb64e7e576c9/packages/react/src/types/wallet.ts#L25)
+[packages/react/src/types/wallet.ts:25](https://github.com/mintthemoon/microcosm-js/blob/c346e4f2580bc6a563c9d5700fb5933b82afca4d/packages/react/src/types/wallet.ts#L25)
 
 ## Type Aliases
 
@@ -230,4 +230,4 @@
 
 #### Defined in
 
-[packages/react/src/types/wallet.ts:31](https://github.com/mintthemoon/microcosm-js/blob/fb95c90ab10e9a453e664325843ddb64e7e576c9/packages/react/src/types/wallet.ts#L31)
+[packages/react/src/types/wallet.ts:31](https://github.com/mintthemoon/microcosm-js/blob/c346e4f2580bc6a563c9d5700fb5933b82afca4d/packages/react/src/types/wallet.ts#L31)

@@ -26,7 +26,7 @@
 
 #### Defined in
 
-[packages/react/src/hooks/use-broadcast.ts:11](https://github.com/mintthemoon/microcosm-js/blob/fb95c90ab10e9a453e664325843ddb64e7e576c9/packages/react/src/hooks/use-broadcast.ts#L11)
+[packages/react/src/hooks/use-broadcast.ts:11](https://github.com/mintthemoon/microcosm-js/blob/c346e4f2580bc6a563c9d5700fb5933b82afca4d/packages/react/src/hooks/use-broadcast.ts#L11)
 
 ***
 
@@ -100,4 +100,4 @@
 
 #### Defined in
 
-[packages/react/src/hooks/use-wallet.ts:11](https://github.com/mintthemoon/microcosm-js/blob/fb95c90ab10e9a453e664325843ddb64e7e576c9/packages/react/src/hooks/use-wallet.ts#L11)
+[packages/react/src/hooks/use-wallet.ts:11](https://github.com/mintthemoon/microcosm-js/blob/c346e4f2580bc6a563c9d5700fb5933b82afca4d/packages/react/src/hooks/use-wallet.ts#L11)

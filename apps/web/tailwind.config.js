@@ -4,11 +4,11 @@ module.exports = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./node_modules/@repo/react/**/*.{js,ts,jsx,tsx}",
+    "./node_modules/@microcosm/react/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     extend: {},
   },
-  plugins: [require("@repo/react/tailwind-plugin")],
+  plugins: [require("@microcosm/react/tailwind-plugin")],
 }
 

@@ -77,7 +77,7 @@ export const sonarConnector: WalletConnector = {
         const { uri, approval } = await signClient.connect({
           requiredNamespaces: requiredNamespaces(),
           optionalNamespaces: {
-            [``]: {
+            [chainId()]: {
               methods: ["cosmos_signDirect", "cosmos_signAmino"],
               events: [],
             }

@@ -12,7 +12,7 @@
 
 ###### Defined in
 
-[packages/react/src/utility/tokens.tsx:9](https://github.com/mintthemoon/microcosm-js/blob/fb95c90ab10e9a453e664325843ddb64e7e576c9/packages/react/src/utility/tokens.tsx#L9)
+[packages/react/src/utility/tokens.tsx:9](https://github.com/mintthemoon/microcosm-js/blob/c346e4f2580bc6a563c9d5700fb5933b82afca4d/packages/react/src/utility/tokens.tsx#L9)
 
 ##### baseDenom
 
@@ -20,7 +20,7 @@
 
 ###### Defined in
 
-[packages/react/src/utility/tokens.tsx:7](https://github.com/mintthemoon/microcosm-js/blob/fb95c90ab10e9a453e664325843ddb64e7e576c9/packages/react/src/utility/tokens.tsx#L7)
+[packages/react/src/utility/tokens.tsx:7](https://github.com/mintthemoon/microcosm-js/blob/c346e4f2580bc6a563c9d5700fb5933b82afca4d/packages/react/src/utility/tokens.tsx#L7)
 
 ##### displayAmount
 
@@ -28,7 +28,7 @@
 
 ###### Defined in
 
-[packages/react/src/utility/tokens.tsx:10](https://github.com/mintthemoon/microcosm-js/blob/fb95c90ab10e9a453e664325843ddb64e7e576c9/packages/react/src/utility/tokens.tsx#L10)
+[packages/react/src/utility/tokens.tsx:10](https://github.com/mintthemoon/microcosm-js/blob/c346e4f2580bc6a563c9d5700fb5933b82afca4d/packages/react/src/utility/tokens.tsx#L10)
 
 ##### displayDenom
 
@@ -36,7 +36,7 @@
 
 ###### Defined in
 
-[packages/react/src/utility/tokens.tsx:8](https://github.com/mintthemoon/microcosm-js/blob/fb95c90ab10e9a453e664325843ddb64e7e576c9/packages/react/src/utility/tokens.tsx#L8)
+[packages/react/src/utility/tokens.tsx:8](https://github.com/mintthemoon/microcosm-js/blob/c346e4f2580bc6a563c9d5700fb5933b82afca4d/packages/react/src/utility/tokens.tsx#L8)
 
 ## Variables
 
@@ -46,7 +46,7 @@
 
 #### Defined in
 
-[packages/react/src/utility/tokens.tsx:13](https://github.com/mintthemoon/microcosm-js/blob/fb95c90ab10e9a453e664325843ddb64e7e576c9/packages/react/src/utility/tokens.tsx#L13)
+[packages/react/src/utility/tokens.tsx:13](https://github.com/mintthemoon/microcosm-js/blob/c346e4f2580bc6a563c9d5700fb5933b82afca4d/packages/react/src/utility/tokens.tsx#L13)
 
 ## Functions
 
@@ -66,7 +66,7 @@
 
 #### Defined in
 
-[packages/react/src/utility/tokens.tsx:22](https://github.com/mintthemoon/microcosm-js/blob/fb95c90ab10e9a453e664325843ddb64e7e576c9/packages/react/src/utility/tokens.tsx#L22)
+[packages/react/src/utility/tokens.tsx:22](https://github.com/mintthemoon/microcosm-js/blob/c346e4f2580bc6a563c9d5700fb5933b82afca4d/packages/react/src/utility/tokens.tsx#L22)
 
 ***
 
@@ -88,7 +88,7 @@
 
 #### Defined in
 
-[packages/react/src/utility/tokens.tsx:15](https://github.com/mintthemoon/microcosm-js/blob/fb95c90ab10e9a453e664325843ddb64e7e576c9/packages/react/src/utility/tokens.tsx#L15)
+[packages/react/src/utility/tokens.tsx:15](https://github.com/mintthemoon/microcosm-js/blob/c346e4f2580bc6a563c9d5700fb5933b82afca4d/packages/react/src/utility/tokens.tsx#L15)
 
 ***
 
@@ -106,7 +106,7 @@
 
 #### Defined in
 
-[packages/react/src/utility/tokens.tsx:40](https://github.com/mintthemoon/microcosm-js/blob/fb95c90ab10e9a453e664325843ddb64e7e576c9/packages/react/src/utility/tokens.tsx#L40)
+[packages/react/src/utility/tokens.tsx:40](https://github.com/mintthemoon/microcosm-js/blob/c346e4f2580bc6a563c9d5700fb5933b82afca4d/packages/react/src/utility/tokens.tsx#L40)
 
 ***
 
@@ -124,7 +124,7 @@
 
 #### Defined in
 
-[packages/react/src/utility/tokens.tsx:28](https://github.com/mintthemoon/microcosm-js/blob/fb95c90ab10e9a453e664325843ddb64e7e576c9/packages/react/src/utility/tokens.tsx#L28)
+[packages/react/src/utility/tokens.tsx:28](https://github.com/mintthemoon/microcosm-js/blob/c346e4f2580bc6a563c9d5700fb5933b82afca4d/packages/react/src/utility/tokens.tsx#L28)
 
 ***
 
@@ -144,7 +144,7 @@
 
 #### Defined in
 
-[packages/react/src/utility/tokens.tsx:48](https://github.com/mintthemoon/microcosm-js/blob/fb95c90ab10e9a453e664325843ddb64e7e576c9/packages/react/src/utility/tokens.tsx#L48)
+[packages/react/src/utility/tokens.tsx:48](https://github.com/mintthemoon/microcosm-js/blob/c346e4f2580bc6a563c9d5700fb5933b82afca4d/packages/react/src/utility/tokens.tsx#L48)
 
 ***
 
@@ -164,4 +164,4 @@
 
 #### Defined in
 
-[packages/react/src/utility/tokens.tsx:60](https://github.com/mintthemoon/microcosm-js/blob/fb95c90ab10e9a453e664325843ddb64e7e576c9/packages/react/src/utility/tokens.tsx#L60)
+[packages/react/src/utility/tokens.tsx:60](https://github.com/mintthemoon/microcosm-js/blob/c346e4f2580bc6a563c9d5700fb5933b82afca4d/packages/react/src/utility/tokens.tsx#L60)

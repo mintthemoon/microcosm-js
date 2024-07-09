@@ -1,7 +1,7 @@
 'use client'
 
-import { Wallet, useWallet, useBroadcast } from "@repo/react/wallet";
-import { Button } from "@repo/react/button";
+import { Wallet, Button } from "@microcosm/react/components";
+import { useWallet, useBroadcast } from "@microcosm/react/hooks";
 import styles from "./page.module.css";
 import { EncodeObject } from "@cosmjs/proto-signing";
 import { coins } from "@cosmjs/amino";

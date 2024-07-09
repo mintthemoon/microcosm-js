@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import "@repo/react/style/main.css";
-import { WalletProvider } from "@repo/react/wallet";
+import "@microcosm/react/tailwind-styles.css";
+import { MicrocosmProvider } from "@microcosm/react/contexts";
 // import "./globals.css";
 
 const geistSans = localFont({
@@ -26,7 +26,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <WalletProvider
+        <MicrocosmProvider
           config={{
             chainId: "kaiyo-1",
             rpcUrl: "https://rpc-kujira.mintthemoon.xyz",
@@ -37,7 +37,7 @@ export default function RootLayout({
             ],
           }}>
             {children}
-          </WalletProvider>
+          </MicrocosmProvider>
       </body>
     </html>
   );

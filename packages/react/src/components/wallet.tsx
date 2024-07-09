@@ -26,6 +26,7 @@ export const Wallet: React.FC = () => {
   } = useWallet();
 
   const [tokens, setTokens] = useState<Map<string, TokenInfo>>(new Map());
+  const [displayTokens, setDisplayTokens] = useState<TokenInfo[]>([]);
 
   useEffect(() => {
     async function fetchBalances() {
@@ -37,6 +38,22 @@ export const Wallet: React.FC = () => {
     }
     fetchBalances();
   }, [isConnected, client, address, config.chainId]);
+
+  useEffect(() => {
+    const updateDisplayTokens = () => {
+      if (config.featuredTokens && config.featuredTokens.length > 0) {
+        const newDisplayTokens = config.featuredTokens
+          .map(denom => tokens.get(denom))
+          .filter((token): token is TokenInfo => token !== undefined);
+        setDisplayTokens(newDisplayTokens);
+      } else {
+        const allTokens = Array.from(tokens.values());
+        setDisplayTokens(config.maxTokens ? allTokens.slice(0, config.maxTokens) : allTokens);
+      }
+    };
+
+    updateDisplayTokens();
+  }, [tokens, config.featuredTokens, config.maxTokens]);
 
   const copyToClipboard = (text: string) => {
     navigator.clipboard.writeText(text);
@@ -75,7 +92,7 @@ export const Wallet: React.FC = () => {
             <DropdownMenuSeparator />
             <ScrollArea className="h-[200px]">
               <div className="p-1">
-                {Array.from(tokens.values()).map((token, index) => (
+                {displayTokens.map((token, index) => (
                   <DropdownMenuItem key={index} className="flex items-center py-2">
                     <div className="w-6 h-6 mr-2 flex-shrink-0">
                       {getTokenIcon(config.chainId, token.baseDenom)}
