@@ -1,7 +1,7 @@
 // src/utility/chain-registry.ts
 import { chains, assets } from 'chain-registry';
 import { ChainRegistryClient } from '@chain-registry/client';
-import { Chain, AssetList, Asset } from '@chain-registry/types';
+import { Chain, AssetList } from '@chain-registry/types';
 
 interface AssetInfo {
   symbol: string;

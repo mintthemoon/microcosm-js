@@ -1,9 +1,10 @@
-import * as React from "react"
-import * as ScrollAreaPrimitive from "@radix-ui/react-scroll-area"
+import * as React from "react";
+import * as ScrollAreaPrimitive from "@radix-ui/react-scroll-area";
 
-import { cn } from "../utility"
+import { cn } from "../utility";
 
-interface ScrollAreaProps extends React.ComponentPropsWithoutRef<typeof ScrollAreaPrimitive.Root> {
+interface ScrollAreaProps
+  extends React.ComponentPropsWithoutRef<typeof ScrollAreaPrimitive.Root> {
   maxHeight?: string | number;
   viewport?: string;
 }
@@ -12,27 +13,31 @@ const ScrollArea = React.forwardRef<
   React.ElementRef<typeof ScrollAreaPrimitive.Root>,
   ScrollAreaProps
 >(({ className, children, maxHeight, viewport, ...props }, ref) => {
-  if (maxHeight) {
-    if (typeof maxHeight === "number") {
-      maxHeight = `[${maxHeight}px]`
-    }
-    viewport = cn(viewport, `max-h-${maxHeight}`);
-  }
+  const heightStyle = maxHeight
+    ? {
+        maxHeight: typeof maxHeight === "number" ? `${maxHeight}px` : maxHeight,
+      }
+    : {};
+
   return (
     <ScrollAreaPrimitive.Root
       ref={ref}
       className={cn("relative overflow-hidden", className)}
+      style={heightStyle}
       {...props}
     >
-      <ScrollAreaPrimitive.Viewport className={cn("h-full w-full rounded-[inherit]", viewport)}>
+      <ScrollAreaPrimitive.Viewport
+        className={cn("h-full w-full rounded-[inherit]", viewport)}
+        style={heightStyle}
+      >
         {children}
       </ScrollAreaPrimitive.Viewport>
       <ScrollBar />
       <ScrollAreaPrimitive.Corner />
     </ScrollAreaPrimitive.Root>
-  )
-})
-ScrollArea.displayName = ScrollAreaPrimitive.Root.displayName
+  );
+});
+ScrollArea.displayName = ScrollAreaPrimitive.Root.displayName;
 
 const ScrollBar = React.forwardRef<
   React.ElementRef<typeof ScrollAreaPrimitive.ScrollAreaScrollbar>,
@@ -53,7 +58,7 @@ const ScrollBar = React.forwardRef<
   >
     <ScrollAreaPrimitive.ScrollAreaThumb className="relative flex-1 rounded-full bg-border" />
   </ScrollAreaPrimitive.ScrollAreaScrollbar>
-))
-ScrollBar.displayName = ScrollAreaPrimitive.ScrollAreaScrollbar.displayName
+));
+ScrollBar.displayName = ScrollAreaPrimitive.ScrollAreaScrollbar.displayName;
 
-export { ScrollArea, ScrollBar, type ScrollAreaProps }
+export { ScrollArea, ScrollBar, type ScrollAreaProps };

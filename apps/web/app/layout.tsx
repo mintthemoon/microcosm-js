@@ -30,11 +30,11 @@ export default function RootLayout({
           config={{
             chainId: "kaiyo-1",
             rpcUrl: "https://rpc-kujira.mintthemoon.xyz",
-            featuredTokens: [
-              "ukuji",
-              "factory/kujira1qk00h5atutpsv900x202pxx42npjr9thg58dnqpa72f2p7m2luase444a7/uusk",
-              "factory/kujira12cjjeytrqcj25uv349thltcygnp9k0kukpct0e/uwink",
-            ],
+            // featuredTokens: [
+            //   "ukuji",
+            //   "factory/kujira1qk00h5atutpsv900x202pxx42npjr9thg58dnqpa72f2p7m2luase444a7/uusk",
+            //   "factory/kujira12cjjeytrqcj25uv349thltcygnp9k0kukpct0e/uwink",
+            // ],
           }}>
             {children}
           </MicrocosmProvider>

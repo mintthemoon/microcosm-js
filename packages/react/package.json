@@ -37,6 +37,7 @@
     "@chain-registry/client": "^1.48.16",
     "@chain-registry/types": "^0.45.16",
     "@cosmjs/amino": "^0.32.4",
+    "@cosmjs/cosmwasm-stargate": "^0.32.4",
     "@cosmjs/proto-signing": "^0.32.4",
     "@cosmjs/stargate": "^0.32.4",
     "@radix-ui/react-dialog": "^1.1.1",

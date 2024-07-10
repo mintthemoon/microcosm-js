@@ -2,42 +2,49 @@
 
 import React, { useState, useEffect } from 'react';
 import { useWallet } from '../hooks/use-wallet';
-import { WalletConfig } from '../types/wallet';
+import { useChainQuery } from '../hooks/use-chain-query';
 import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuItem, DropdownMenuSeparator } from "./dropdown-menu";
 import { Button } from "./button";
 import { WalletIcon, CopyIcon, Loader2Icon } from "lucide-react";
 import { ScrollArea } from "./scroll-area";
 import { formatAddress, formatTokenName, formatTokenAmount, getTokenIcon } from '../utility/tokens';
 import { providers } from '../utility/wallet/providers';
-import { processRawBalances, TokenInfo } from '../utility/tokens';
+import { TokenInfo } from '../utility/tokens';
+import { cn } from '../utility';
 
-export interface WalletProps extends WalletConfig {}
+export interface WalletProps {
+  buttonClassName?: string;
+  dropdownClassName?: string;
+  dropdownAlign?: "start" | "center" | "end";
+}
 
-export const Wallet: React.FC = () => {
+export const Wallet: React.FC<WalletProps> = ({ buttonClassName, dropdownClassName, dropdownAlign }) => {
   const { 
-    isConnected, 
+    isConnected: isWalletConnected, 
     isLoading, 
     address, 
     connect, 
     disconnect, 
     error,
     config,
-    client
   } = useWallet();
+  const { 
+    queryBalances,
+    isConnected: isChainQueryConnected,
+  } = useChainQuery();
 
   const [tokens, setTokens] = useState<Map<string, TokenInfo>>(new Map());
   const [displayTokens, setDisplayTokens] = useState<TokenInfo[]>([]);
 
   useEffect(() => {
     async function fetchBalances() {
-      if (isConnected && client && address) {
-        const balances = await client.getAllBalances(address);
-        const processedTokens = processRawBalances(config.chainId, balances);
-        setTokens(processedTokens);
+      if (address && isChainQueryConnected) {
+        const balances = await queryBalances(address);
+        setTokens(balances);
       }
     }
     fetchBalances();
-  }, [isConnected, client, address, config.chainId]);
+  }, [address, config.chainId, isChainQueryConnected]);
 
   useEffect(() => {
     const updateDisplayTokens = () => {
@@ -66,22 +73,23 @@ export const Wallet: React.FC = () => {
         <DropdownMenuTrigger asChild>
           <Button
             variant="outline"
-            className="w-fit px-3 hover:bg-background"
+            className={cn("w-fit px-3 focus-visible:ring-0", buttonClassName)}
           >
             {isLoading ? (
               <Loader2Icon className="mr-2 h-4 w-4 animate-spin" />
             ) : (
               <WalletIcon className="mr-2 h-4 w-4" />
             )}
-            {isConnected ? formatAddress(address, true) : "Connect Wallet"}
+            {isWalletConnected ? formatAddress(address, true) : "Connect Wallet"}
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent
-          className="w-[240px]"
+          className={cn("w-[240px]", dropdownClassName)}
           sideOffset={5}
           forceMount
+          align={dropdownAlign || "end"}
         >
-        {isConnected ? (
+        {isWalletConnected ? (
           <>
             <DropdownMenuItem onClick={() => copyToClipboard(address)}>
               <div className="font-mono text-xs flex items-center">
@@ -90,7 +98,7 @@ export const Wallet: React.FC = () => {
               </div>
             </DropdownMenuItem>
             <DropdownMenuSeparator />
-            <ScrollArea className="h-[200px]">
+            <ScrollArea maxHeight={200}>
               <div className="p-1">
                 {displayTokens.map((token, index) => (
                   <DropdownMenuItem key={index} className="flex items-center py-2">

@@ -3,6 +3,7 @@
 
 import { useCallback, useEffect } from 'react';
 import { useWalletState, useWalletDispatch } from '../contexts/wallet';
+import { useChainQuery } from './use-chain-query';
 import { WalletProvider } from '../types/wallet';
 import { SigningStargateClient } from '@cosmjs/stargate';
 import { saveWalletConnection, getWalletConnection, clearWalletConnection } from '../utility/storage';
@@ -11,6 +12,7 @@ import { providers } from '../utility/wallet/providers';
 export const useWallet = () => {
   const state = useWalletState();
   const dispatch = useWalletDispatch();
+  const { queryBalances, isConnected: isChainQueryConnected } = useChainQuery();
 
   const setLoading = useCallback((isLoading: boolean) => {
     dispatch({ type: 'SET_LOADING', payload: isLoading });
@@ -25,7 +27,6 @@ export const useWallet = () => {
         throw new Error('No account found');
       }
       const client = await SigningStargateClient.connectWithSigner(state.config.rpcUrl, result.signer);
-      
       
       dispatch({ 
         type: 'CONNECT', 
@@ -64,10 +65,26 @@ export const useWallet = () => {
     }
   }, [dispatch, state.provider, setLoading]);
 
+  const updateTokens = useCallback(async () => {
+    if (isChainQueryConnected && state.isConnected && state.address) {
+      try {
+        const tokens = await queryBalances(state.address);
+        dispatch({ type: 'SET_TOKENS', payload: tokens });
+      } catch (error) {
+        console.error('Failed to fetch token balances:', error);
+      }
+    }
+  }, [state.isConnected, state.address, isChainQueryConnected, queryBalances, dispatch]);
+
+  useEffect(() => {
+    updateTokens();
+  }, [updateTokens]);
+
   useEffect(() => {
     if (state.isConnected && state.provider) {
       const cleanup = state.provider.connector.subscribe(state.config, (newAddress) => {
         dispatch({ type: 'CHANGE_ADDRESS', payload: newAddress });
+        updateTokens();
       });
       return cleanup;
     }
