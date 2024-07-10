@@ -3,7 +3,7 @@ import { keplrProvider } from './keplr';
 import { leapProvider } from './leap';
 
 const providers = [
-    sonarProvider,
+    // sonarProvider,
     keplrProvider,
     leapProvider,
 ];
