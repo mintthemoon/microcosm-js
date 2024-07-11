@@ -6,3 +6,4 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 export * as tokens from './tokens';
+export * as chainRegistry from './chain-registry';

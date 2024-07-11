@@ -37,7 +37,7 @@ export const useChainQuery = () => {
     return processRawBalances(state.config.chainId, balances);
   }, [state.stargateClient, state.isConnected, state.config.chainId]);
 
-  const queryContract = useCallback(async (contractAddress: string, query: Record<string, unknown>) => {
+  const queryContract = useCallback(async (contractAddress: string, query: Record<string, unknown> | string) => {
     if (!state.cosmWasmClient || !state.isConnected) {
       throw new Error('CosmWasmClient not initialized');
     }
