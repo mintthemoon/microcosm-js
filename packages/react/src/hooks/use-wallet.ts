@@ -84,7 +84,6 @@ export const useWallet = () => {
     if (state.isConnected && state.provider) {
       const cleanup = state.provider.connector.subscribe(state.config, (newAddress) => {
         dispatch({ type: 'CHANGE_ADDRESS', payload: newAddress });
-        updateTokens();
       });
       return cleanup;
     }

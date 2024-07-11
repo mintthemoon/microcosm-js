@@ -1,20 +1,22 @@
-'use client'
+"use client";
 
-import React, { createContext, useReducer, useContext } from 'react';
-import { WalletState, WalletAction, WalletConfig } from '../types/wallet';
+import React, { createContext, useReducer, useContext } from "react";
+import { WalletState, WalletAction, WalletConfig } from "../types/wallet";
 
 const WalletStateContext = createContext<WalletState | undefined>(undefined);
-const WalletDispatchContext = createContext<React.Dispatch<WalletAction> | undefined>(undefined);
+const WalletDispatchContext = createContext<
+  React.Dispatch<WalletAction> | undefined
+>(undefined);
 
-const defaultConfig:  WalletConfig = {
+const defaultConfig: WalletConfig = {
   chainId: "kaiyo-1",
   rpcUrl: "https://rpc-kujira.mintthemoon.xyz",
-}
+};
 
 const initialState: WalletState = {
   isConnected: false,
   isLoading: false,
-  address: '',
+  address: "",
   provider: null,
   client: null,
   signer: null,
@@ -26,9 +28,9 @@ const initialState: WalletState = {
 
 function walletReducer(state: WalletState, action: WalletAction): WalletState {
   switch (action.type) {
-    case 'SET_LOADING':
+    case "SET_LOADING":
       return { ...state, isLoading: action.payload };
-    case 'CONNECT':
+    case "CONNECT":
       return {
         ...state,
         isConnected: true,
@@ -39,20 +41,25 @@ function walletReducer(state: WalletState, action: WalletAction): WalletState {
         account: action.payload.account,
         error: null,
       };
-    case 'DISCONNECT':
+    case "DISCONNECT":
       return {
         ...initialState,
       };
-    case 'SET_TOKENS':
+    case "SET_TOKENS":
       return { ...state, tokens: action.payload };
-    case 'SET_ERROR':
+    case "SET_ERROR":
       return { ...state, error: action.payload };
+    case "CHANGE_ADDRESS":
+      return { ...state, address: action.payload };
     default:
       return state;
   }
 }
 
-export const WalletProvider: React.FC<{ children: React.ReactNode; config: WalletConfig }> = ({ children, config }) => {
+export const WalletProvider: React.FC<{
+  children: React.ReactNode;
+  config: WalletConfig;
+}> = ({ children, config }) => {
   const [state, dispatch] = useReducer(walletReducer, {
     ...initialState,
     config,
@@ -70,7 +77,7 @@ export const WalletProvider: React.FC<{ children: React.ReactNode; config: Walle
 export const useWalletState = () => {
   const context = useContext(WalletStateContext);
   if (context === undefined) {
-    throw new Error('useWalletState must be used within a WalletProvider');
+    throw new Error("useWalletState must be used within a WalletProvider");
   }
   return context;
 };
@@ -78,7 +85,7 @@ export const useWalletState = () => {
 export const useWalletDispatch = () => {
   const context = useContext(WalletDispatchContext);
   if (context === undefined) {
-    throw new Error('useWalletDispatch must be used within a WalletProvider');
+    throw new Error("useWalletDispatch must be used within a WalletProvider");
   }
   return context;
 };
