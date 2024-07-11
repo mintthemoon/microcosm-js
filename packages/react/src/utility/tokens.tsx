@@ -45,16 +45,43 @@ export function formatTokenAmount(amount: number): string {
   });
 }
 
-export function getTokenIcon(chainId: string, baseDenom: string): React.ReactNode {
-  const iconUrl = chainDataProvider.getAssetIcon(chainId, baseDenom);
+export interface TokenIconProps {
+  chainId: string;
+  name: string;
+}
+
+export const TokenIcon = ({chainId, name}: TokenIconProps) => {
+  const iconUrl = chainDataProvider.getAssetIcon(chainId, name);
   
   if (iconUrl) {
-    return <img src={iconUrl} alt={baseDenom} className="w-full h-full object-contain" />;
-  } else if (baseDenom.startsWith("factory/")) {
-    return <FactoryIcon className="w-full h-full" />;
+    return <img src={iconUrl} alt={name} className="token-icon w-full h-full object-contain" />;
+  } else if (name.startsWith("factory/")) {
+    return <FactoryIcon className="token-icon w-full h-full" />;
   } else {
-    return <CircleHelpIcon className="w-full h-full" />;
+    return <CircleHelpIcon className="token-icon w-full h-full" />;
   }
+}
+
+export function resolveTokenName(chainId: string, denom: string): string {
+  const assetInfo = chainDataProvider.getAssetInfo(chainId, denom);
+  return assetInfo? assetInfo.symbol : denom;
+}
+
+export interface TokenProps {
+  chainId: string;
+  name: string;
+  amount: number | undefined;
+}
+
+export const Token = ({ chainId, name, amount }: TokenProps) => {
+  const displayName = formatTokenName(resolveTokenName(chainId, name));
+  return (
+    <div className="token flex items-center">
+      <TokenIcon chainId={chainId} name={name} />
+      {amount ? <div className="token-amount ml-2">{formatTokenAmount(amount)}</div> : null}
+      <div className="token-name ml-2">{displayName}</div>
+    </div>
+  );
 }
 
 export function processRawBalances(chainId: string, rawBalances: readonly Coin[]): Map<string, TokenInfo> {
