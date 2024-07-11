@@ -7,7 +7,7 @@ import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuIte
 import { Button } from "./button";
 import { WalletIcon, CopyIcon, Loader2Icon } from "lucide-react";
 import { ScrollArea } from "./scroll-area";
-import { formatAddress, formatTokenName, formatTokenAmount, getTokenIcon } from '../utility/tokens';
+import { formatAddress, formatTokenName, formatTokenAmount, TokenIcon } from '../utility/tokens';
 import { providers } from '../utility/wallet/providers';
 import { TokenInfo } from '../utility/tokens';
 import { cn } from '../utility';
@@ -103,7 +103,7 @@ export const Wallet: React.FC<WalletProps> = ({ buttonClassName, dropdownClassNa
                 {displayTokens.map((token, index) => (
                   <DropdownMenuItem key={index} className="flex items-center py-2">
                     <div className="w-6 h-6 mr-2 flex-shrink-0">
-                      {getTokenIcon(config.chainId, token.baseDenom)}
+                      <TokenIcon name={token.baseDenom} chainId={config.chainId} />
                     </div>
                     <div className="flex-grow min-w-0">
                       <div className="font-medium text-sm truncate">
