@@ -1,16 +1,27 @@
-'use client'
+"use client";
 
-import React, { useState, useEffect } from 'react';
-import { useWallet } from '../hooks/use-wallet';
-import { useChainQuery } from '../hooks/use-chain-query';
-import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuItem, DropdownMenuSeparator } from "./dropdown-menu";
+import React, { useState, useEffect } from "react";
+import { useWallet } from "../hooks/use-wallet";
+import { useChainQuery } from "../hooks/use-chain-query";
+import {
+  DropdownMenu,
+  DropdownMenuTrigger,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuSeparator,
+} from "./dropdown-menu";
 import { Button } from "./button";
 import { WalletIcon, CopyIcon, Loader2Icon } from "lucide-react";
 import { ScrollArea } from "./scroll-area";
-import { formatAddress, formatTokenName, formatTokenAmount, TokenIcon } from '../utility/tokens';
-import { providers } from '../utility/wallet/providers';
-import { TokenInfo } from '../utility/tokens';
-import { cn } from '../utility';
+import {
+  formatAddress,
+  formatTokenName,
+  formatTokenAmount,
+  TokenIcon,
+} from "../utility/tokens";
+import { getProvider, providers } from "../utility/wallet/providers";
+import { TokenInfo } from "../utility/tokens";
+import { cn } from "../utility";
 
 export interface WalletProps {
   buttonClassName?: string;
@@ -18,20 +29,21 @@ export interface WalletProps {
   dropdownAlign?: "start" | "center" | "end";
 }
 
-export const Wallet: React.FC<WalletProps> = ({ buttonClassName, dropdownClassName, dropdownAlign }) => {
-  const { 
-    isConnected: isWalletConnected, 
-    isLoading, 
-    address, 
-    connect, 
-    disconnect, 
+export const Wallet: React.FC<WalletProps> = ({
+  buttonClassName,
+  dropdownClassName,
+  dropdownAlign,
+}) => {
+  const {
+    isConnected: isWalletConnected,
+    isLoading,
+    address,
+    connect,
+    disconnect,
     error,
     config,
   } = useWallet();
-  const { 
-    queryBalances,
-    isConnected: isChainQueryConnected,
-  } = useChainQuery();
+  const { queryBalances, isConnected: isChainQueryConnected } = useChainQuery();
 
   const [tokens, setTokens] = useState<Map<string, TokenInfo>>(new Map());
   const [displayTokens, setDisplayTokens] = useState<TokenInfo[]>([]);
@@ -50,12 +62,14 @@ export const Wallet: React.FC<WalletProps> = ({ buttonClassName, dropdownClassNa
     const updateDisplayTokens = () => {
       if (config.featuredTokens && config.featuredTokens.length > 0) {
         const newDisplayTokens = config.featuredTokens
-          .map(denom => tokens.get(denom))
+          .map((denom) => tokens.get(denom))
           .filter((token): token is TokenInfo => token !== undefined);
         setDisplayTokens(newDisplayTokens);
       } else {
         const allTokens = Array.from(tokens.values());
-        setDisplayTokens(config.maxTokens ? allTokens.slice(0, config.maxTokens) : allTokens);
+        setDisplayTokens(
+          config.maxTokens ? allTokens.slice(0, config.maxTokens) : allTokens
+        );
       }
     };
 
@@ -80,7 +94,9 @@ export const Wallet: React.FC<WalletProps> = ({ buttonClassName, dropdownClassNa
             ) : (
               <WalletIcon className="mr-2 h-4 w-4" />
             )}
-            {isWalletConnected ? formatAddress(address, true) : "Connect Wallet"}
+            {isWalletConnected
+              ? formatAddress(address, true)
+              : "Connect Wallet"}
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent
@@ -89,55 +105,66 @@ export const Wallet: React.FC<WalletProps> = ({ buttonClassName, dropdownClassNa
           forceMount
           align={dropdownAlign || "end"}
         >
-        {isWalletConnected ? (
-          <>
-            <DropdownMenuItem onClick={() => copyToClipboard(address)}>
-              <div className="font-mono text-xs flex items-center">
-                {formatAddress(address, false)}
-                <CopyIcon className="ml-2 h-4 w-4" />
-              </div>
-            </DropdownMenuItem>
-            <DropdownMenuSeparator />
-            <ScrollArea maxHeight={200}>
-              <div className="p-1">
-                {displayTokens.map((token, index) => (
-                  <DropdownMenuItem key={index} className="flex items-center py-2">
-                    <div className="w-6 h-6 mr-2 flex-shrink-0">
-                      <TokenIcon name={token.baseDenom} chainId={config.chainId} />
-                    </div>
-                    <div className="flex-grow min-w-0">
-                      <div className="font-medium text-sm truncate">
-                        {formatTokenName(token.displayDenom)}
-                      </div>
-                      <div className="text-sm text-muted-foreground">
-                        {formatTokenAmount(token.displayAmount)}
-                      </div>
-                    </div>
-                  </DropdownMenuItem>
-                ))}
-              </div>
-            </ScrollArea>
-            <DropdownMenuSeparator />
-            <DropdownMenuItem onClick={disconnect}>
-              Disconnect
-            </DropdownMenuItem>
-          </>
-        ) : (
-          <div className="grid grid-cols-3 gap-1 p-1">
-            {providers.map((provider) => (
-              <DropdownMenuItem
-                key={provider.name}
-                className="flex flex-col items-center justify-center h-24 cursor-pointer focus:outline-none px-1"
-                onClick={() => connect(provider)}
-              >
-                <div className="w-12 h-12 mb-2 flex items-center justify-center">
-                  <provider.icon className="w-full h-full" />
+          {isWalletConnected ? (
+            <>
+              <DropdownMenuItem onClick={() => copyToClipboard(address)}>
+                <div className="font-mono text-xs flex items-center">
+                  {formatAddress(address, false)}
+                  <CopyIcon className="ml-2 h-4 w-4" />
                 </div>
-                <span className="text-xs text-center">{provider.name}</span>
               </DropdownMenuItem>
-            ))}
-          </div>
-        )}
+              <DropdownMenuSeparator />
+              <ScrollArea maxHeight={200}>
+                <div className="p-1">
+                  {displayTokens.map((token, index) => (
+                    <DropdownMenuItem
+                      key={index}
+                      className="flex items-center py-2"
+                    >
+                      <div className="w-6 h-6 mr-2 flex-shrink-0">
+                        <TokenIcon
+                          name={token.baseDenom}
+                          chainId={config.chainId}
+                        />
+                      </div>
+                      <div className="flex-grow min-w-0">
+                        <div className="font-medium text-sm truncate">
+                          {formatTokenName(token.displayDenom)}
+                        </div>
+                        <div className="text-sm text-muted-foreground">
+                          {formatTokenAmount(token.displayAmount)}
+                        </div>
+                      </div>
+                    </DropdownMenuItem>
+                  ))}
+                </div>
+              </ScrollArea>
+              <DropdownMenuSeparator />
+              <DropdownMenuItem onClick={disconnect}>
+                Disconnect
+              </DropdownMenuItem>
+            </>
+          ) : (
+            <div className="grid grid-cols-3 gap-1 p-1">
+              {(config.providers
+                ? config.providers
+                    .map(getProvider)
+                    .filter((v) => typeof v !== "undefined")
+                : providers
+              ).map((provider) => (
+                <DropdownMenuItem
+                  key={provider.name}
+                  className="flex flex-col items-center justify-center h-24 cursor-pointer focus:outline-none px-1"
+                  onClick={() => connect(provider)}
+                >
+                  <div className="w-12 h-12 mb-2 flex items-center justify-center">
+                    <provider.icon className="w-full h-full" />
+                  </div>
+                  <span className="text-xs text-center">{provider.name}</span>
+                </DropdownMenuItem>
+              ))}
+            </div>
+          )}
         </DropdownMenuContent>
       </DropdownMenu>
       {error && <p className="text-red-500 mt-2">Error: {error.message}</p>}

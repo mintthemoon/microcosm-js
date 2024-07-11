@@ -13,6 +13,7 @@ export interface WalletConfig {
   rpcUrl: string;
   featuredTokens?: string[];
   maxTokens?: number;
+  providers?: string[];
 }
 
 export interface WalletState {
